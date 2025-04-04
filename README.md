@@ -82,7 +82,7 @@ data/
 > ⚠️ You may need to manually request access or process `.p` files using their loader script.
 
 ### 3. Generate `refcoco_mini` (processed JSON)
-After preparing the data, run `predict_clip.py` or related scripts in this repo. It will automatically process the RefCOCO `.p` files and COCO images to produce a JSON subset like:
+After preparing the data, run `convert_refcoco_to_json.py` or related scripts in this repo. It will automatically process the RefCOCO `.p` files and COCO images to produce a JSON subset like:
 ```
 data/refcoco_mini/refcoco_mini.json
 ```
