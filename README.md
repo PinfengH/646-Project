@@ -6,7 +6,7 @@ This project implements a pipeline for Referring Expression Comprehension (REC) 
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 
 <details>
 <summary>Click to expand full folder structure</summary>
@@ -47,7 +47,7 @@ This project implements a pipeline for Referring Expression Comprehension (REC) 
 
 ---
 
-## 🔧 How to Prepare the Data
+## How to Prepare the Data
 
 This project relies on data from MS COCO and RefCOCO. Since these datasets are large and cannot be hosted directly on GitHub, please follow the instructions below to download and prepare the necessary files.
 
@@ -79,7 +79,7 @@ data/
 └── refcoco/
 ```
 
-> ⚠️ You may need to manually request access or process `.p` files using their loader script.
+>   You may need to manually request access or process `.p` files using their loader script.
 
 ### 3. Generate `refcoco_mini` (processed JSON)
 After preparing the data, run `convert_refcoco_to_json.py` or related scripts in this repo. It will automatically process the RefCOCO `.p` files and COCO images to produce a JSON subset like:
@@ -90,7 +90,7 @@ This file contains all referring expressions and bounding boxes in a flattened J
 
 ---
 
-## 🔁 Pipeline Overview
+## Pipeline Overview
 
 ### 1. Region Proposal
 Use `stage1_proposal.py` to extract region proposals for each image using Faster R-CNN.
@@ -109,7 +109,7 @@ Run `tools/eval_clip.py` to compute mean IoU and matching accuracy.
 
 ---
 
-## 📋 Requirements
+## Requirements
 
 - Python 3.8+
 - PyTorch
@@ -125,17 +125,9 @@ Run `tools/eval_clip.py` to compute mean IoU and matching accuracy.
 
 ---
 
-## ✅ Status
-- [x] Region proposal extraction
-- [x] CLIP matching and prediction
-- [x] Supervised training and evaluation
-- [x] Visualization tools
-
----
-
-## ✍️ Author
+## Author
 Pinfeng Huang 
 
 Graduate Student @ Rice University  
 
-✉️ ph60@rice.edu
+ph60@rice.edu
