@@ -93,19 +93,26 @@ This file contains all referring expressions and bounding boxes in a flattened J
 ## Pipeline Overview
 
 ### 1. Region Proposal
-Use `stage1_proposal.py` to extract region proposals for each image using Faster R-CNN.
+Run `stage1_proposal.py` to generate region proposals using a fine-tuned Faster R-CNN.
 
-### 2. CLIP-based Matching
-Run `predict_clip.py` to compute similarity between expressions and region crops using CLIP. Outputs to `outputs/predictions_clip.json`.
+### 2. CLIP-Based Region Scoring
+Use `predict_clip.py` to compute cosine similarity between region crops and referring expressions using frozen CLIP encoders.
 
-### 3. Visualization
-Use `vis_clip.py` to visualize prediction vs ground truth bounding boxes.
+### 3. Evaluation
+Run `tools/eval_clip.py` to compute accuracy and mean IoU.
 
-### 4. Training
-Run `train.py` to fine-tune region matching using CrossEntropy loss. Loss and accuracy are tracked live with `livelossplot`.
+### 4. Visualization
+Use `vis_clip.py` to visualize predicted vs. ground truth bounding boxes.
 
-### 5. Evaluation
-Run `tools/eval_clip.py` to compute mean IoU and matching accuracy.
+> *Note:* We also implemented `train.py` for CLIP-based matching training, but results were suboptimal compared to using frozen CLIP encoders
+
+---
+
+## Results
+
+- Accuracy improved from **41.2%** (baseline) to **54.7%**
+- Mean IoU improved from **0.407** to **0.539**
+- Best results were achieved using frozen CLIP + fine-tuned Faster R-CNN proposals
 
 ---
 
