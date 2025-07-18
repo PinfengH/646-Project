@@ -12,7 +12,7 @@ This project implements a pipeline for Referring Expression Comprehension (REC) 
 <summary>Click to expand full folder structure</summary>
 
 ```
-your_project/
+646_project/
 ├── data/
 │   ├── annotations/                  # From MS COCO annotations zip
 │   ├── images/                       # COCO images: train2014/, val2014/
